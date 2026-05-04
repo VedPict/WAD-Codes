@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script href="./server.js"></script> -->
+    <title>Employee Details</title>
+</head>
+
+
+<body>
+    <div>
+        <h1>User List</h1>
+    </div>    
+
+    
+        <ul id="list"></ul>
+    
+
+<!--Script to populate-->
+<script>
+    fetch('/users')
+    .then(res => res.json())
+    .then(data => {
+        let list = document.getElementById('list');
+        list.innerHTML = "";
+
+        data.forEach(user => {
+            let li = document.createElement('li');
+            li.innerHTML = `ID: ${user.id} | 
+            Name: ${user.name} |
+            Designation: ${user.designation}  `;
+
+            list.append(li);
+        });//data loop ends
+    })
+    .catch(err => console.log(err));
+
+</script>
+
+
+</body>
+
+
+
+</html>

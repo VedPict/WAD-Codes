@@ -1,0 +1,59 @@
+<!DOCTYPE html> <!-- Declares the document type as HTML5, the modern web standard -->
+<html> <!-- The root element that wraps all content on the entire web page -->
+<head> <!-- Contains meta-information about the page that isn't visible to users -->
+    <title>PICT - Home</title> <!-- Sets the text that appears in the browser tab -->
+
+    <!-- Bootstrap -->
+    <!-- Links the external Bootstrap CSS file to give the page pre-built styling and grid layout -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body> <!-- Contains all the visible content of the website -->
+
+<!-- ===== NAVBAR (same on all pages) ===== -->
+<!-- nav: Semantic tag for navigation; navbar: Bootstrap base class; navbar-dark: White text; bg-dark: Dark background; navbar-expand-lg: Controls when the menu collapses for mobile -->
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container"> <!-- Centers the content within the navbar and adds responsive padding -->
+
+        <!-- navbar-brand: Used for the logo or website name; href="index.html": Links back to home -->
+        <a class="navbar-brand" href="index.html">PICT</a>
+
+        <!-- navbar-toggler: The button that appears on mobile; data-bs-toggle/target: Bootstrap's logic to open the menu -->
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span> <!-- The 'hamburger' icon (three horizontal lines) -->
+        </button>
+
+        <!-- collapse navbar-collapse: Classes that hide the menu on small screens until toggled -->
+        <div class="collapse navbar-collapse" id="menu">
+            <!-- navbar-nav: Styling for the list; ms-auto: Margin-start-auto (pushes the links to the right side) -->
+            <ul class="navbar-nav ms-auto">
+
+                <!-- nav-item: Wraps each link; nav-link: Styles the anchor tag for the navigation bar -->
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+                <li class="nav-item"><a class="nav-link" href="toppers.html">Toppers</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== CONTENT ===== -->
+<!-- container: Centers the content; text-center: Aligns text to middle; my-5: Margin Top & Bottom (level 5 spacing) -->
+<div class="container text-center my-5">
+    <h1>Pune Institute of Computer Technology</h1> <!-- Primary heading (Largest size) -->
+    <h3>Welcome to XYZ College</h3> <!-- Level 3 heading (Sub-heading size) -->
+</div>
+
+<!-- Footer -->
+<!-- bg-dark: Dark background; text-white: White font; text-center: Aligned to middle; p-3: Padding on all sides (level 3) -->
+<footer class="bg-dark text-white text-center p-3">
+    <p>PICT Pune</p> <!-- Paragraph text for the footer info -->
+</footer>
+
+<!-- Bootstrap JS Bundle: Includes Popper.js; required for the navbar toggle (mobile menu) to actually click/open -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

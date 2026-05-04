@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+</head>
+<body>
+    <ul id="list_songs"></ul>
+</body>
+
+<script>
+    function search_director(director_name){
+        fetch(`/search/${director_name}`)
+        .then(res => res.json())
+        .then(data => {
+            alert(JSON.stringify(data));
+        })
+    }
+
+    function search_director_singer(director_singer){
+        fetch(`/search/${director_singer}`)
+        .then(res => res.json())
+        .then(data => {
+            alert(JSON.stringify(data));
+        })
+    }
+</script>
+</html>

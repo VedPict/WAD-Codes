@@ -1,0 +1,4 @@
+[
+    {"id": 1, "name": "Ved", "designation":"Manager", "department": "IT", "salary": 1000000, "img": "C:\\Users\\Lenovo\\Desktop\\Wad_Pracs\\node_chits\\w_17\\perceptron-neuron-blog.webp"},
+    {"id": 2, "name": "Mugdha", "designation":"Manager", "department": "IT", "salary": 1000000, "img": "C:\\Users\\Lenovo\\Desktop\\Wad_Pracs\\node_chits\\w_17\\perceptron-neuron-blog.webp"}
+]

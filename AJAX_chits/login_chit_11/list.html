@@ -1,0 +1,57 @@
+<!-- ========================= -->
+<!-- list.html -->
+<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User List</title>
+</head>
+<body>
+
+<h2>Registered Users</h2>
+
+<table border="1" cellpadding="10">
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Mobile</th>
+</tr>
+</thead>
+
+<tbody id="tableData"></tbody>
+</table>
+
+<a href="index.html">Back to Home</a>
+
+<script>
+
+// fetch users from server
+fetch('/users')
+.then(res => res.json())
+.then(data => {
+
+    let output = "";
+
+    // loop all users
+    data.forEach(user => {
+        output += `
+        <tr>
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td>${user.phone}</td>
+        </tr>
+        `;
+    });
+
+    // show in table
+    document.getElementById("tableData").innerHTML = output;
+
+});
+
+</script>
+
+</body>
+</html>

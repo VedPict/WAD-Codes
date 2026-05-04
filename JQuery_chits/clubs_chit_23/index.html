@@ -1,0 +1,221 @@
+<!-- Build a mobile website to display student clubs and extracurricular activities at 
+PICT. Each club (e.g., Coding Club, Robotics Club, Dance Club) should have:
+• Name
+• Description
+• Achievements
+• Static images -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../bootstrap.min.css">
+
+    <style>
+        .button {
+            border-color: aqua;
+            background-color: black;
+        }
+
+        .img {
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+        }
+    </style>
+    
+    <title>Clubs</title>
+</head>
+
+
+
+<body>
+
+    
+    <div data-role="page" id="home">
+
+        <div data-role="header">
+            <h1>PICT</h1>
+        </div>
+
+        <div data-role="navbar">
+            <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#clubs">Clubs</a></li>
+            <li><a href="#description">Description</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <div class="mt-5 text-center">
+                <h5>Welcome to the PICT Home Page</h5>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <div data-role="footer">
+                Copy-rights reserved
+            </div>
+        </div>
+
+        
+    </div>
+
+
+
+
+
+    <!--About Page-->
+    <div data-role="page" id="about">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#clubs">Clubs</a></li>
+                <li><a href="#description">Description</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+            </ul>
+        </div>
+
+        <div data-role="content">
+            <div>
+                <p>This is the about page</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <div data-role="button" class="button"><a href="#home">Back</a></div>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="clubs">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#clubs">Clubs</a></li>
+                <li><a href="#description">Description</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+            </ul>
+        </div>
+
+        <div data-role="content">
+            <div data-role="collapsible">
+                <h1>Robotics Club</h1>
+                <p>This is the robotics clubs page</p>
+            </div>
+
+
+            <div data-role="collapsible">
+                <h1>Electronics Club</h1>
+                <p>This is the Electronics clubs page</p>
+            </div>
+
+
+            <div data-role="collapsible">
+                <h1>IEEE Club</h1>
+                <p>This is the IEEE clubs page</p>
+            </div>
+
+
+        </div>
+
+        <div class="text-center mt-3">
+            <div data-role="button" class="button"><a href="#home">Back</a></div>
+        </div>
+    </div>
+
+
+
+        <div data-role="page" id="description">
+
+            <div data-role="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#clubs">Clubs</a></li>
+                <li><a href="#description">Description</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+            </ul>
+        </div>
+
+        <div data-role="content">
+            <div data-role="collapsible">
+                <h1>Robotics Club</h1>
+                <p>Hi this is the robotics club description</p>
+                <img src="../perceptron-neuron-blog.webp" class="img">
+            </div>
+
+
+            <div data-role="collapsible">
+                <h1>Electronics Club</h1>
+                <p>This is the Electronics description page</p>
+            </div>
+
+
+            <div data-role="collapsible">
+                <h1>IEEE Club</h1>
+                <p>This is the IEEE description page</p>
+            </div>
+
+
+        </div>
+        <div class="text-center mt-3">
+            <div data-role="button" class="button"><a href="#home">Back</a></div>
+        </div>
+
+
+        </div>
+
+
+        <div data-role="page" id="achievements">
+
+            <div data-role="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#clubs">Clubs</a></li>
+                <li><a href="#description">Description</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+            </ul>
+        </div>
+
+        <div data-role="content">
+            <div data-role="collapsible">
+                <h1>Robotics Club</h1>
+                <p>Hi this is the robotics club achievements</p>
+                <img src="../perceptron-neuron-blog.webp" class="img">
+            </div>
+
+
+            <div data-role="collapsible">
+                <h1>Electronics Club</h1>
+                <p>This is the Electronics description page</p>
+            </div>
+
+
+            <div data-role="collapsible">
+                <h1>IEEE Club</h1>
+                <p>This is the IEEE description page</p>
+            </div>
+
+
+        </div>
+        <div class="text-center mt-3">
+            <div data-role="button" class="button"><a href="#home">Back</a></div>
+        </div>
+
+        
+        </div>
+
+
+
+    </div>
+
+
+
+
+</body>
+</html>

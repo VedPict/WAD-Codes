@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input</title>
+</head>
+
+
+<body>
+
+    <div class="register-form">
+
+        <h1>Register Form</h1>
+
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="email" placeholder="Email Address">
+        <input type="password" id ="password" placeholder="password">
+        <input type="tel" id="phone" placeholder="Phone number">
+        <button onclick="registerUser()">Register</button>
+
+    </div>
+
+
+    <div class="login-form">
+
+        <h1>Login Form</h1>
+
+        <input type="text" id="email-login" placeholder="Email">
+        <input type="password" id="password-login" placeholder="Password">
+
+        <button onclick="loginUser()">Login</button>
+
+    </div>
+
+    <a href="list.html">View User List</a>
+    
+
+    <script>
+        //Register
+
+        function registerUser(){
+            let name_reg = document.getElementById('name').value;
+            let email_reg = document.getElementById('email').value;
+            let password_reg = document.getElementById('password').value;
+            let phone_reg = document.getElementById('phone').value;
+
+            if(name_reg == ""){
+                alert("Enter Name");
+                return;
+            }
+
+            if(!email_reg.includes("@")){
+                alert("Invalid Email");
+                return;
+            }
+
+            if(phone_reg.length != 10){
+                alert("Mobile must be 10 digits");
+                return;
+            }
+
+            if(password_reg.length < 4){
+                alert("Password must be 4 characters");
+                return;
+            }
+
+            let user = {
+                name: name_reg,
+                email: email_reg,
+                password: password_reg,
+                phone: phone_reg
+            };
+
+
+            fetch('/register',{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(user)
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert(data.message)
+            })
+        }
+
+
+
+        function loginUser(){
+
+            let username = document.getElementById("email-login").value
+            let password = document.getElementById("password-login").value
+
+            fetch('/login',{
+                method: 'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({
+                    username,
+                    password
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert(data.message);
+            })
+        }
+
+    </script>
+
+
+</body>
+
+</html>

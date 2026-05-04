@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <title>Product Catalog</title>
+</head>
+
+
+<body>
+
+    <div class="container mt-5">
+
+        <h1>Products Available</h1>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+    <script>
+        fetch('/products')
+        .then(res => res.json())
+        .then(data => {
+            let tbody = document.getElementById('tbody');
+            tbody.innerHTML = "";
+
+            data.forEach(product => {
+                let tr = document.createElement('tr');
+
+                let td1 = document.createElement('td');
+                td1.innerHTML = product.name;
+
+                let td2 = document.createElement('td');
+                td2.innerHTML = product.price;
+
+                let td3 = document.createElement('td');
+                td3.innerHTML = `<img src="${product.img}" width=100>`;
+                
+
+                tr.append(td1,td2,td3);
+                tbody.appendChild(tr);
+            });
+            
+        })
+    </script>
+
+    
+</body>
+
+
+</html>

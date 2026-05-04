@@ -1,0 +1,5 @@
+[
+    {"id": 1,"name": "One Plus Pad 3","price": 50000, "img": "/product.webp"},
+    {"id": 2,"name": "Lenovo Yoga Tab Plus","price": 60000, "img": "/product.webp"},
+    {"id": 3,"name": "Xiaomi Tab 8 Pro","price": 40000, "img": "/product.webp"}
+]
