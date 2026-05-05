@@ -1,0 +1,131 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <title>Angular Auth App</title>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+        margin-top: 50px;
+        background: #f2f2f2;
+      }
+
+      .box {
+        background: white;
+        width: 300px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      input {
+        display: block;
+        width: 90%;
+        margin: 8px auto;
+        padding: 8px;
+      }
+    </style>
+  </head>
+
+  <body ng-controller="mainCtrl">
+    <div class="box">
+      <!-- REGISTER -->
+      <div ng-show="page == 'register'">
+        <h2>Register</h2>
+
+        <input type="text" ng-model="user.name" placeholder="Name" />
+        <input type="email" ng-model="user.email" placeholder="Email" />
+        <input
+          type="password"
+          ng-model="user.password"
+          placeholder="Password"
+        />
+
+        <button ng-click="register()">Register</button>
+
+        <p><a href="" ng-click="page='login'">Go to Login</a></p>
+      </div>
+
+      <!-- LOGIN -->
+      <div ng-show="page == 'login'">
+        <h2>Login</h2>
+
+        <input type="email" ng-model="login.email" placeholder="Email" />
+        <input
+          type="password"
+          ng-model="login.password"
+          placeholder="Password"
+        />
+
+        <button ng-click="loginUser()">Login</button>
+
+        <p><a href="" ng-click="page='register'">New user? Register</a></p>
+      </div>
+
+      <!-- PROFILE -->
+      <div ng-show="page == 'profile'">
+        <h2>Profile</h2>
+
+        <p>Name: {{currentUser.name}}</p>
+        <p>Email: {{currentUser.email}}</p>
+
+        <button ng-click="logout()">Logout</button>
+      </div>
+    </div>
+
+    <script>
+      angular.module("app", []).controller("mainCtrl", function ($scope) {
+        $scope.page = "register"; // default page
+
+        $scope.users = [];
+        $scope.user = {};
+        $scope.login = {};
+        $scope.currentUser = {};
+
+        // REGISTER
+        $scope.register = function () {
+          if (
+            !$scope.user.name ||
+            !$scope.user.email ||
+            !$scope.user.password
+          ) {
+            alert("Fill all fields");
+            return;
+          }
+
+          $scope.users.push({ ...$scope.user });
+          alert("Registered");
+
+          $scope.user = {}; // clear form
+          $scope.page = "login";
+        };
+
+        // LOGIN
+        $scope.loginUser = function () {
+          let found = $scope.users.find(
+            (u) =>
+              u.email === $scope.login.email &&
+              u.password === $scope.login.password,
+          );
+
+          if (found) {
+            $scope.currentUser = found;
+            $scope.page = "profile";
+            $scope.login = {}; // clear form
+          } else {
+            alert("Invalid Login");
+          }
+        };
+
+        // LOGOUT
+        $scope.logout = function () {
+          $scope.page = "login";
+        };
+      });
+    </script>
+  </body>
+</html>

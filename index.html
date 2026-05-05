@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+    <title>Angular Todo</title>
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- JS file -->
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head> 
+
+<body ng-controller="todoCtrl">
+
+<div class="box">
+
+    <h2>Angular Todo</h2>
+
+    <input id="inputText" type="text" ng-model="newTask" placeholder="Enter task">
+    <button id="AddText" ng-click="addTask()">Add</button>
+
+    <ul>
+        <li ng-repeat="task in tasks track by $index">
+            {{task}}
+            <button ng-click="editTask($index)">Edit</button>
+            <button ng-click="deleteTask($index)">Delete</button>
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>
